@@ -1,7 +1,10 @@
 ﻿using System;
 
+// 하노이탑 문제를 해결하는 클래스
 class TowersOfHanoi
 {
+    // 재귀적으로 하노이탑을 해결하는 함수
+
     static void Hanoi(int n, char from, char to, char aux)
     {
         if (n == 1)
