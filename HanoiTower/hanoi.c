@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void hanoi(int n, char from, char to, char aux) {
+void hanoi(int n, char from, char to, char aux) {       //하노이 기본함수
     if (n == 1) {
-        printf("Move disk 1 from %c to %c\n", from, to);
+        printf("Move disk 1 from %c to %c\n", from, to);       
         return;
     }
     hanoi(n - 1, from, aux, to);
