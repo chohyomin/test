@@ -8,5 +8,5 @@ def hanoi(n, from_rod, to_rod, aux_rod):
     hanoi(n - 1, aux_rod, to_rod, from_rod)
 
 if __name__ == "__main__":
-    n = 3  # 디스크 수
+    n = 5  # 디스크 수
     hanoi(n, 'A', 'C', 'B')  # A, B, C는 기둥 이름
