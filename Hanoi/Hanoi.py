@@ -10,10 +10,13 @@ def hanoi(n, from_rod, to_rod, aux_rod):
 
 if __name__ == "__main__":
     while True:
-        n = int(input("Enter the number of disks (positive integer): "))
-        if n > 0:
-            break
-        print("Please enter a positive integer.")
+        try:
+            n = int(input("Enter the number of disks (positive integer): "))
+            if n > 0:
+                break
+            print("Please enter a positive integer.")
+        except ValueError:
+            print("Invalid input. Please enter a positive integer.")
 
     print(f"Moves to solve the Towers of Hanoi with {n} disks:")
     hanoi(n, 'A', 'C', 'B')  # A, B, C´Â ±âµÕ ÀÌ¸§
