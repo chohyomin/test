@@ -20,15 +20,16 @@ class TowersOfHanoi
     static void Main(string[] args)
     {
         int n;
-        do
+        while (true)
         {
             Console.Write("Enter the number of disks (positive integer): ");
-            n = Convert.ToInt32(Console.ReadLine());
-            if (n <= 0)
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out n) && n > 0)
             {
-                Console.WriteLine("Please enter a positive integer.");
+                break;
             }
-        } while (n <= 0); // 유효하지 않은 경우 반복
+            Console.WriteLine("Invalid input. Please enter a positive integer.");
+        }
 
         Console.WriteLine($"Moves to solve the Towers of Hanoi with {n} disks:");
         Hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
