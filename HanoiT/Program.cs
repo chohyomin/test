@@ -21,8 +21,10 @@ class TowersOfHanoi
     {
         Console.Write("Enter the number of disks: ");
         int n = Convert.ToInt32(Console.ReadLine()); // 사용자 입력
+        Console.WriteLine($"Moves to solve the Towers of Hanoi with {n} disks:");
         Hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     }
+
 
 }
 
