@@ -1,5 +1,6 @@
 #include <iostream>
 
+// 하노이탑 문제를 해결하는 재귀 함수
 void hanoi(int n, char from, char to, char aux) {
     if (n == 1) {
         std::cout << "Move disk 1 from " << from << " to " << to << std::endl;
@@ -11,7 +12,7 @@ void hanoi(int n, char from, char to, char aux) {
 }
 
 int main() {
-    int n =5; // 디스크 수
+    int n = 4; // 디스크 수
     hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     return 0;
 }
