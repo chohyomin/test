@@ -15,8 +15,12 @@ int main() {
     // 사용자 입력 및 유효성 검사
     do {
         printf("Enter the number of disks (positive integer): ");
-        scanf("%d", &n);
-        if (n <= 0) {
+        if (scanf("%d", &n) != 1) {
+            printf("Invalid input. Please enter a positive integer.\n");
+            while (getchar() != '\n'); // 입력 버퍼 비우기
+            n = 0; // 초기화
+        }
+        else if (n <= 0) {
             printf("Please enter a positive integer.\n");
         }
     } while (n <= 0); // 유효하지 않은 경우 반복
