@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void hanoi(int n, char from, char to, char aux) {       //하노이 기본함수
+void hanoi(int n, char from, char to, char aux) {
     if (n == 1) {
-        printf("Move disk 1 from %c to %c\n", from, to);       
+        printf("Move disk 1 from %c to %c\n", from, to);
         return;
     }
     hanoi(n - 1, from, aux, to);
@@ -12,8 +12,20 @@ void hanoi(int n, char from, char to, char aux) {       //하노이 기본함수
 
 int main() {
     int n;
-    printf("Enter the number of disks: ");
-    scanf("%d", &n); // 사용자 입력
+    // 사용자 입력 및 유효성 검사
+    do {
+        printf("Enter the number of disks (positive integer): ");
+        if (scanf("%d", &n) != 1) {
+            printf("Invalid input. Please enter a positive integer.\n");
+            while (getchar() != '\n'); // 입력 버퍼 비우기
+            n = 0; // 초기화
+        }
+        else if (n <= 0) {
+            printf("Please enter a positive integer.\n");
+        }
+    } while (n <= 0); // 유효하지 않은 경우 반복
+
+    printf("Moves to solve the Towers of Hanoi with %d disks:\n", n);
     hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     return 0;
 }
