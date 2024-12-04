@@ -11,7 +11,7 @@ void hanoi(int n, char from, char to, char aux) {
 }
 
 int main() {
-    int n = 3; // 디스크 수
+    int n =5; // 디스크 수
     hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     return 0;
 }
