@@ -16,7 +16,7 @@ class TowersOfHanoi
 
     static void Main(string[] args)
     {
-        int n = 3; // 디스크 수
+        int n =5; // 디스크 수
         Hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     }
 }
