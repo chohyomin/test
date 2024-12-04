@@ -19,8 +19,10 @@ class TowersOfHanoi
 
     static void Main(string[] args)
     {
-        int n =5; // 디스크 수
+        Console.Write("Enter the number of disks: ");
+        int n = Convert.ToInt32(Console.ReadLine()); // 사용자 입력
         Hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     }
+
 }
 
