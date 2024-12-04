@@ -12,7 +12,10 @@ void hanoi(int n, char from, char to, char aux) {
 }
 
 int main() {
-    int n = 4; // 디스크 수
+    int n;
+    // 사용자 입력 받기
+    std::cout << "Enter the number of disks: ";
+    std::cin >> n; // 사용자 입력
     hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     return 0;
 }
