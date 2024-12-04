@@ -9,5 +9,5 @@ def hanoi(n, from_rod, to_rod, aux_rod):
     hanoi(n - 1, aux_rod, to_rod, from_rod)
 
 if __name__ == "__main__":
-    n = 4  # 디스크 수
+    n = int(input("Enter the number of disks: "))  # 사용자 입력
     hanoi(n, 'A', 'C', 'B')  # A, B, C는 기둥 이름
