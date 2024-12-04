@@ -1,5 +1,6 @@
 
 def hanoi(n, from_rod, to_rod, aux_rod):
+    # 하노이탑 문제를 해결하는 재귀 함수
     if n == 1:
         print(f"Move disk 1 from {from_rod} to {to_rod}")
         return
@@ -8,5 +9,5 @@ def hanoi(n, from_rod, to_rod, aux_rod):
     hanoi(n - 1, aux_rod, to_rod, from_rod)
 
 if __name__ == "__main__":
-    n = 5  # 디스크 수
+    n = 4  # 디스크 수
     hanoi(n, 'A', 'C', 'B')  # A, B, C는 기둥 이름
