@@ -9,6 +9,11 @@ def hanoi(n, from_rod, to_rod, aux_rod):
     hanoi(n - 1, aux_rod, to_rod, from_rod)
 
 if __name__ == "__main__":
-    n = int(input("Enter the number of disks: "))  # 사용자 입력
+    while True:
+        n = int(input("Enter the number of disks (positive integer): "))
+        if n > 0:
+            break
+        print("Please enter a positive integer.")
+
     print(f"Moves to solve the Towers of Hanoi with {n} disks:")
     hanoi(n, 'A', 'C', 'B')  # A, B, C는 기둥 이름
