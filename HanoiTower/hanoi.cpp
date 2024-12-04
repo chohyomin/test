@@ -13,16 +13,18 @@ void hanoi(int n, char from, char to, char aux) {
 
 int main() {
     int n;
-    // 사용자 입력 및 유효성 검사
-    do {
+    while (true) {
         std::cout << "Enter the number of disks (positive integer): ";
-        std::cin >> n;
-        if (n <= 0) {
-            std::cout << "Please enter a positive integer." << std::endl;
+        if (std::cin >> n && n > 0) {
+            break;
         }
-    } while (n <= 0); // 유효하지 않은 경우 반복
+        std::cout << "Invalid input. Please enter a positive integer." << std::endl;
+        std::cin.clear(); // 오류 플래그 해제
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 입력 버퍼 비우기
+    }
 
     std::cout << "Moves to solve the Towers of Hanoi with " << n << " disks:" << std::endl;
     hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     return 0;
 }
+
