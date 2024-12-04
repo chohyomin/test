@@ -11,7 +11,9 @@ void hanoi(int n, char from, char to, char aux) {       //하노이 기본함수
 }
 
 int main() {
-    int n = 5; // 디스크 수
+    int n;
+    printf("Enter the number of disks: ");
+    scanf("%d", &n); // 사용자 입력
     hanoi(n, 'A', 'C', 'B'); // A, B, C는 기둥 이름
     return 0;
 }
